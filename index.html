@@ -375,16 +375,16 @@ var urls = ["https://garagelist.onrender.com/"];
 
 for (let i = 0; i < 2; i++) {
     try {
-
+        
         var xhr = new XMLHttpRequest();
 
         xhr.open('GET', urls[i] + 'connection', true);
         xhr.send();
-
+        alert(urls);
         xhr.onreadystatechange = function() {
           if (this.readyState != 4)
           return;
-
+            
           if (this.status != 200) {
             if (i == urls.length - 1) {
             document.getElementById('lws').innerHTML = 'Сервер не найден.  <br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
