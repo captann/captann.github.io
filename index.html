@@ -380,7 +380,6 @@ for (let i = 0; i < 2; i++) {
 
         xhr.open('GET', urls[i] + 'connection', true);
         xhr.send();
-        alert(urls);
         xhr.onreadystatechange = function() {
           if (this.readyState != 4)
           return;
