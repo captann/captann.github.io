@@ -371,14 +371,14 @@ if (window.innerWidth < 981) {
 }
 
 
-var urls = ["https://garagelist.onrender.com/"];
+var urls = ["https://garagelist.onrender.com/", "https://garagelist.loca.lt/"];
 
 for (let i = 0; i < 2; i++) {
     try {
         
         var xhr = new XMLHttpRequest();
 
-        xhr.open('GET', urls[i] + 'connection', true);
+        xhr.open('GET', urls[i] + 'connection', false);
         xhr.send();
         xhr.onreadystatechange = function() {
           if (this.readyState != 4)
