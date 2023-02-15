@@ -18,6 +18,7 @@
     font-family: arial;
     overflow-x: hidden;
     overflow-y: auto;
+    opacity: 0.85;
 
 
 }
@@ -65,7 +66,7 @@ a {
         overflow-x: hidden;
         flex-flow: row wrap; /* Shorthand for flex-direction: row and flex-wrap: wrap */
         font-weight:  bold;
-        background: #03658e; /* цвет фона навигационной панели */
+        background: #333336; /* цвет фона навигационной панели */
 
     }
     @media screen and (min-width: 1301px) {
@@ -97,7 +98,7 @@ a {
 
     a:hover {
 
-        background: #003153; /* фон пунктов при наведении */
+        background: #222226; /* фон пунктов при наведении */
         color: #fff;
 
     }
@@ -371,7 +372,7 @@ if (window.innerWidth < 981) {
 }
 
 
-var urls = ["https://grgt.loca.lt/"];
+var urls = ["https://garagelist.onrender.com/"];
 
 for (let i = 0; i < 2; i++) {
     try {
@@ -386,7 +387,7 @@ for (let i = 0; i < 2; i++) {
             
           if (this.status != 200) {
             if (i == urls.length - 1) {
-            document.getElementById('lws').innerHTML = 'Сервер не найден.  <br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
+            document.getElementById('lws').innerHTML = 'Сервер не найден.  <br><br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
             }
             if (this.status == 0) {
                 if (i == 1) {
