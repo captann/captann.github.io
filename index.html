@@ -374,9 +374,15 @@ if (window.innerWidth < 981) {
 
 var urls = ["https://garagelist.onrender.com/"];
 
+let date = new Date();
+if ((date.getHours() > 22) || (date.getHours() < 7)) {
+   document.getElementById('lws').innerHTML = 'С 23:00 до 7:00 сервер уходит в режим ожидания. Ожидание может быть больше обычного.<br><br>Поиск работающего сервера...</a>';
+}
+
+
 for (let i = 0; i < 2; i++) {
     try {
-        
+
         var xhr = new XMLHttpRequest();
 
         xhr.open('GET', urls[i] + 'connection', true);
@@ -384,7 +390,7 @@ for (let i = 0; i < 2; i++) {
         xhr.onreadystatechange = function() {
           if (this.readyState != 4)
           return;
-            
+
           if (this.status != 200) {
             if (i == urls.length - 1) {
             document.getElementById('lws').innerHTML = 'Сервер не найден.  <br><br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
