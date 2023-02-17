@@ -374,22 +374,19 @@ if (window.innerWidth < 981) {
 
 var urls = ["https://garagelist.onrender.com/"];
 
-let date = new Date();
-if ((date.getHours() > 22) || (date.getHours() < 7)) {
-   document.getElementById('lws').innerHTML = 'С 23:00 до 7:00 сервер уходит в режим ожидания. Ожидание может быть больше обычного.<br><br>Поиск работающего сервера...</a>';
-}
-
-
 for (let i = 0; i < 2; i++) {
+    document.getElementById('lws').innerHTML = "Поиск работающего сервера...";
     try {
-
+        document.getElementById('lws').innerHTML = 'Запрос отправлен...';
         var xhr = new XMLHttpRequest();
-
+        
         xhr.open('GET', urls[i] + 'connection', true);
         xhr.send();
         xhr.onreadystatechange = function() {
           if (this.readyState != 4)
           return;
+             document.getElementById('lws').innerHTML = 'Ответ получен...';
+
 
           if (this.status != 200) {
             if (i == urls.length - 1) {
@@ -402,7 +399,7 @@ for (let i = 0; i < 2; i++) {
             };
             return;
           }
-          document.getElementById('lws').innerHTML = 'Сервер найден. Идет переадресация...'
+          document.getElementById('lws').innerHTML = 'Сервер найден. Идет переадресация...';
           window.location.replace(urls[i]);
 
         }
