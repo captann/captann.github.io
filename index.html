@@ -338,12 +338,11 @@ input {
 
 
     <div id="maindiv">
-
-
-
         <div id="preworkpart">
-
             <h3 id="lws" style="color: #fff8e7;">Поиск работающего сервера...</h3>
+                            <p id="permitton" style="color:#F4A460"></p>
+
+
         </div>
 
 
@@ -354,6 +353,13 @@ input {
 
 
 <script>
+let date = new Date();
+let hour = date.getUTCHours() + 3;
+if ( (hour > 22) || (hour < 7) ) {
+    document.getElementById('permitton').innerHTML = "<hr>С 23:00 до 7:00 по московскому времени время ожидания может быть увеличино";
+
+}
+
 
     setTimeout(function(){
     let elems = document.getElementsByName('message');
@@ -378,6 +384,12 @@ for (let i = 0; i < urls.length; i++) {
         var xhr = new XMLHttpRequest();
 
         xhr.open('GET', urls[i] + 'connection', true);
+        xhr.timeout = 40000;
+        xhr.ontimeout = function () {
+                    document.getElementById('lws').innerHTML = 'Сервер не найден.  <br><br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
+
+        }
+
         xhr.send();
         document.getElementById('lws').innerHTML = 'Запрос отправлен к серверу №' + (i + 1) + '...';
         xhr.onreadystatechange = function() {
