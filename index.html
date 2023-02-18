@@ -354,17 +354,14 @@ input {
 
 
 <script>
+
     setTimeout(function(){
     let elems = document.getElementsByName('message');
     for (let i = 0; i < elems.length; i++) {
         elems[i].style.display = 'none';
     }
 
-}, 3000)
-
-
-
-
+}, 3000);
 
 
 if (window.innerWidth < 981) {
@@ -374,20 +371,19 @@ if (window.innerWidth < 981) {
 
 var urls = ["https://garagelist.onrender.com/"];
 
-for (let i = 0; i < 2; i++) {
-    document.getElementById('lws').innerHTML = "Поиск работающего сервера...";
+for (let i = 0; i < urls.length; i++) {
+    document.getElementById('lws').innerHTML = 'Проверка сервера №' + (i + 1) + '...';
     try {
-        document.getElementById('lws').innerHTML = 'Запрос отправлен...';
+
         var xhr = new XMLHttpRequest();
-        
+
         xhr.open('GET', urls[i] + 'connection', true);
         xhr.send();
+        document.getElementById('lws').innerHTML = 'Запрос отправлен к серверу №' + (i + 1) + '...';
         xhr.onreadystatechange = function() {
-          if (this.readyState != 4)
-          return;
-             document.getElementById('lws').innerHTML = 'Ответ получен...';
-
-
+          if (this.readyState != 4) {
+            return;
+          }
           if (this.status != 200) {
             if (i == urls.length - 1) {
             document.getElementById('lws').innerHTML = 'Сервер не найден.  <br><br>Попробуйте <a href="#" onclick="history.go(0)">обновить страницу</a>'
@@ -399,7 +395,7 @@ for (let i = 0; i < 2; i++) {
             };
             return;
           }
-          document.getElementById('lws').innerHTML = 'Сервер найден. Идет переадресация...';
+          document.getElementById('lws').innerHTML = 'Ответ получен... <br>Сервер найден. Идет переадресация...';
           window.location.replace(urls[i]);
 
         }
