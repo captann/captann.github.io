@@ -352,7 +352,7 @@ input {
 
 <script>
 let date = new Date();
-let hour = date.getUTCHours() + 3;
+let hour = (date.getUTCHours() + 3) % 24;
 if ( (hour > 22) || (hour < 7) ) {
     document.getElementById('permitton').innerHTML = "<hr>С 23:00 до 7:15 по Москве время ожидания может быть увеличино";
 
