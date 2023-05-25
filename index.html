@@ -346,14 +346,11 @@ input {
 
 </style>
 <body>
-
-
-
-
-
-    <h2 style=" color: rgb(244, 164, 96);text-align:center;">Гаражный учет</h2>
-    <hr>
+<label style="color:#333333">Программа гаражный учет</label>
+<h2 style=" color: rgb(244, 164, 96);text-align:center;">Гаражный учет</h2>
     <br>
+
+
     <div id="maindiv">
         <div id="preworkpart">
             <h3 id="lws" style="color: #fff8e7;">Поиск работающего сервера...</h3>
@@ -389,9 +386,7 @@ if ( (hour ==7) && (minute < 16) ) {
 }, 3000);
 
 
-if (window.innerWidth < 981) {
-    document.body.style.zoom= 2.0;
-}
+
 
 
 var urls = ["https://garagelist.onrender.com/"];
@@ -426,7 +421,7 @@ for (let i = 0; i < urls.length; i++) {
             };
             return;
           }
-          document.getElementById('lws').innerHTML = 'Ответ получен... <br>Сервер найден. Идет переадресация...';
+          document.getElementById('lws').innerHTML = 'Ответ получен: Сервер найден.<br><br> Идет переадресация...';
           window.location.replace(urls[i]);
         }
         }
