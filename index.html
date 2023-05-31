@@ -328,6 +328,15 @@ input {
     border: 2px solid #F4A460;
 }
 
+p {
+ overflow-wrap: break-word;  /* не поддерживает IE, Firefox; является копией word-wrap */
+  word-wrap: break-word;
+  word-break: keep-all;  /* не поддерживает Opera12.14, значение keep-all не поддерживается IE, Chrome */
+  line-break: normal;  /* нет поддержки для русского языка */
+ -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto;  /* значение auto не поддерживается Chrome */
+  width: 100%;
+}
+
 </style>
 <body>
 
