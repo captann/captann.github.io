@@ -355,7 +355,7 @@ p.dline {
     <hr>
     <p align="left" >
         <font color="red" size="3.5">    Вспомни</font>, когда заканчиваешь работу, как ты сидишь с одним номером, а вокруг тебя те,<br><br>
-        <font color="#ed9121" size="3.5">кто говорят "хз", "я вообще не знаю, как это делать"</font>, строчат лисками, притворным шопотом говоря,<br><br> чтобы было слышно <font color="#ed9121" size="3.5">"да это легчайшее"</font>, поддакивают себе под нос.<br><br>
+        <font color="#ed9121" size="3.5">кто говорил "хз", "я вообще не знаю, как это делать"</font>, строчат лисками, притворным шопотом говоря,<br><br> чтобы было слышно <font color="#ed9121" size="3.5">"да это легчайшее"</font>, поддакивают себе под нос.<br><br>
         И сколько <font color="red" size="3.5"> я клялся себе</font>, что я все выучу, а потом сдавал на минимум на пересдаче и <font color="red" size="3.5">бросал, <br><br> предавал собственные слова</font>.
 
 
@@ -384,9 +384,22 @@ p.dline {
 
 </div>
 <script>
+    var c = 0;
      function a() {
-     document.getElementById("1").setAttribute("hidden", "hidden");
-        document.getElementById("2").removeAttribute("hidden");
+         if (c % 2 == 0) {
+             c = 1;
+             document.getElementById("1").setAttribute("hidden", "hidden");
+                document.getElementById("2").removeAttribute("hidden");
+             }
+         else {
+             c = 0
+             
+             document.getElementById("2").setAttribute("hidden", "hidden");
+                document.getElementById("1").removeAttribute("hidden");
+             }
+         
+         
+         }
      }
     
 </script>
