@@ -338,7 +338,7 @@ input {
             <p id="permitton" style="color:#ed9121;margin-bottom:5px;margin-top:5px;"></p>
 
             <hr>
-            <h3 id="lws" style="color: #fff8e7;">Поиск работающего сервера...</h3>
+            <h3 id="lws" style="color: #fff8e7;text-decoration: underline;cursor:pointer;" title="Перейти к профилю" onclick="start()">Перейти к профилю</h3>
 
 
         </div>
@@ -368,6 +368,8 @@ input {
 
 
 <script>
+function start() {
+
 let date = new Date();
 let hour = (date.getUTCHours() + 3) % 24;
 if ( (hour > 22) || (hour < 7) ) {
@@ -395,6 +397,7 @@ if ( (hour ==7 ) && (minute < 16) ) {
 var urls = ["https://garagelist.onrender.com/"];
 
 for (let i = 0; i < urls.length; i++) {
+    document.getElementById('lws').style.textDecoration = 'none';
     document.getElementById('lws').innerHTML = 'Проверка сервера №' + (i + 1) + '...';
     try {
 
@@ -436,6 +439,7 @@ for (let i = 0; i < urls.length; i++) {
 
 }
 
+}
 </script>
 <script>
     if (window.innerWidth < 1300) {
