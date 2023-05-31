@@ -2,10 +2,6 @@
 <html lang="ru">
 
 <head>
-    <!-- Yandex.Metrika counter -->
-
-
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
       <meta charset="UTF-8">
@@ -339,7 +335,7 @@ input {
 
 
 
-    <div id="maindiv">
+    <div id="maindiv" onmousedown="click()">
         <div id="preworkpart">
             <h3 id="lws" style="color: #fff8e7;">Поиск работающего сервера...</h3>
                             <p id="permitton" style="color:#F4A460"></p>
@@ -347,6 +343,10 @@ input {
 
         </div>
         <hr>
+        <div id="l" style="text-align:center;" hidden>
+        <a href="Garagelist.apk" >Скачайте удобное мобильное приложение</a>
+        <hr>
+            </div>
         <p>
 
             <font color="#F4A460">П</font>рограмма "Гаражный учет" - отличное решение для владельцев автомобилей, которые хотят вести подробную запись обо всех операциях, проведенных над их транспортными средствами. Главная задача программы - обеспечить удобный и эффективный учет автомобилей и их состояния.
@@ -363,8 +363,6 @@ input {
 <br><br>
 <font color="#F4A460">Э</font>та программа будет полезна как автовладельцу с одной машиной, так и целым автопаркам, ведь
 функционал программы "Гаражный учет" очень велик и покрывает все потребности рядового пользователя.
-
-
         </p>
     </div>
 
@@ -437,6 +435,12 @@ for (let i = 0; i < urls.length; i++) {
     }
 
 }
+
+</script>
+<script>
+    if (window.innerWidth < 1300) {
+        document.getElementById('l').removeAttribute("hidden");
+    }
 
 </script>
 
