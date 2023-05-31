@@ -425,7 +425,7 @@ for (let i = 0; i < urls.length; i++) {
             return;
           }
           document.getElementById('lws').innerHTML = 'Ответ получен: сервер найден.<br><br> Идет переадресация...';
-          window.location.replace(urls[i]);
+          //window.location.replace(urls[i]);
         }
         }
 
@@ -441,6 +441,17 @@ for (let i = 0; i < urls.length; i++) {
     if (window.innerWidth < 1300) {
         document.getElementById('l').removeAttribute("hidden");
     }
+</script>
+
+<script>
+if( !window.nativeBridge ){
+    window.nativeBridge = {
+        getClientId:function(){ return "web"; }
+    }
+}
+alert(nativeBridge.getClientId() == "web");
+
+
 
 </script>
 
